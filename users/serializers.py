@@ -41,7 +41,7 @@ class UserProfileViewSerializer(ModelSerializer):
 
         # white list approach
         # include all these fields in response.....hide sensitive fields
-        fields = ('bio','profile_pic_url', 'user')
+        fields = ('bio','profile_pic_url', 'user', 'created_on', 'is_verified')
         #fields = ['bio']
         # exclude all fields .....black list approach....not include
         #exclude = ('id',)
