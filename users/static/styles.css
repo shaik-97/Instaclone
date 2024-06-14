@@ -1,0 +1,32 @@
+/* static/styles.css */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #f8f9fa;
+}
+
+.header-container h1 {
+    margin: 0 0 0 10px;
+}
+
+.instagram-logo {
+    width: 30px;
+    height: 30px;
+    filter: hue-rotate(200deg); /* Change color using hue-rotate */
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #f8f9fa;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}

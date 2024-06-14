@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}My Website{% endblock %}</title>
+    <!-- Load static files -->
+    {% load static %}
+    <!-- Link to Google Fonts for a simple custom font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <!-- Link to static CSS files for basic styling -->
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <link rel="stylesheet" href="{% static 'signup.css' %}">
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <!-- Instagram Logo -->
+            <a href="https://www.instagram.com" target="_blank">
+                <img src="{% static 'images/instagram-logo.png' %}" alt="Instagram Logo" class="instagram-logo">
+            </a>
+            <h1>My Website</h1>
+        </div>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2024 My Website</p>
+    </footer>
+</body>
+</html>
