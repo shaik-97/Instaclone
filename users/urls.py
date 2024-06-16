@@ -21,4 +21,5 @@ urlpatterns = [
     path('Login/', TokenObtainPairView.as_view(),name='readymade_login_api'),
     path('list/',views.user_list, name='user_list_api'),
     path('build/', views.JarBuild, name='jar_build'),
+    path()
 ]
