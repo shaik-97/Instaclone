@@ -1,13 +1,12 @@
 from django.shortcuts import render
 import logging
 from .models import User, UserProfile
-from rest_framework.decorators import api_view
+from rest_framework.decorators import api_view, authentication_classes, permission_classes
 from rest_framework.response import Response
 from rest_framework import status
 from .serializers import UserCreateSerializers, UserProfileViewSerializer
 from rest_framework_simplejwt.tokens import RefreshToken
 import logging
-
 logger = logging.getLogger(__name__)
 # Create your views here.
 print("This is from views.py")
@@ -69,7 +68,8 @@ def signup_user(request):
 # method to display list of users without any protection
 @api_view(['GET'])
 def user_list(request):
-    # protect this view
+    # 1.protect this view
+    # 2.Better representtion for user obj - hide sensitive data like passwd and show only required data of user
 
     print('Hi This is user list api getting invoked')
     # fetching all obj or rows from UserProfile into a var users
@@ -98,6 +98,15 @@ def login_view(request):
     print("inside login method executing ==> ")
     return render(request, 'users/login.html')
 
+
+
+# THis snippet is for building jar in jenkins
+from . import jarbuild
+@api_view()
+def JarBuild(request):
+    if jarbuild.build():
+        return Response('jar Building')
+    return Response('Jar building failed')
 
 
 

@@ -41,4 +41,4 @@ class UserProfile(TimeStamp):
     profile_pic_url = models.ImageField(max_length=255, default=DEFAULT_PROFILE_PIC)
     bio = models.CharField(max_length=255, blank=True) # blank-true empty string is allowed
     is_verified = models.BooleanField(default=False)
-
+    #owner = models.ForeignKey('auth.User', related_name='snippets', on_delete=models.CASCADE)

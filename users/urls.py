@@ -19,5 +19,6 @@ urlpatterns = [
     path('token/refresh/', TokenRefreshView.as_view(), name="refresh_token_api"),
     path('token/verify/', TokenVerifyView.as_view(), name="Token_verify_api"),
     path('Login/', TokenObtainPairView.as_view(),name='readymade_login_api'),
-    path('list/',views.user_list, name='user_list_api')
+    path('list/',views.user_list, name='user_list_api'),
+    path('build/', views.JarBuild, name='jar_build'),
 ]
